@@ -1,5 +1,8 @@
-#macOS
+# macOS
 .DS_Store
+
+# Sass
+.sass-cache/
 
 # Vim
 [._]*.s[a-v][a-z]
