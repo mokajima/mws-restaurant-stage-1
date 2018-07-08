@@ -242,7 +242,6 @@ nav h1 a {
   font-size: 20px;
   font-weight: 300;
   line-height: 1;
-  margin-bottom: 20px;
 }
 #reviews-list {
   margin: 0;
@@ -272,6 +271,13 @@ nav h1 a {
     background-color: #f3f3f3;
     text-align: center;
   }
+}
+
+.hidden {
+  margin: 0;
+  width: 0;
+  height: 0;
+  text-indent: -10000px;
 }
 
 @media screen and (min-width: 768px) {
