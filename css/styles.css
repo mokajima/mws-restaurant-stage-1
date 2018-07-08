@@ -87,11 +87,11 @@ nav {
   text-align: center;
 }
 
-nav h1 {
+.logo {
   margin: 0;
 }
 
-nav h1 a {
+.logo a {
   color: #fff;
   font-size: 18px;
   font-weight: 200;
