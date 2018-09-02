@@ -187,7 +187,7 @@ nav {
 
 #restaurants-list li a {
   background-color: orange;
-  border-bottom: 3px solid #eee;
+  border-bottom: 3px solid #f18200;
   color: #fff;
   display: inline-block;
   font-size: 14px;
@@ -197,11 +197,6 @@ nav {
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.2s ease;
-}
-
-#restaurants-list li a:hover,
-#restaurants-list li a:focus {
-  background-color: #f18200;
 }
 
 #restaurants-list li a:active {
