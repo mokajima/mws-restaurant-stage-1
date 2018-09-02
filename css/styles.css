@@ -150,7 +150,7 @@ nav {
 .filter-options select {
   background-color: white;
   border: 1px solid #fff;
-  font-family: Arial,sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 15px;
   height: 35px;
   letter-spacing: 0;
@@ -378,6 +378,7 @@ nav {
     margin-bottom: 20px;
   }
 }
+
 @media screen and (min-width: 1450px) {
   #restaurants-list,
   .inside #maincontent {
