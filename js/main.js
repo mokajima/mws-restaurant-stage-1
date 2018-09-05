@@ -31,13 +31,17 @@ fetchNeighborhoods = () => {
  * Set neighborhoods HTML.
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
-  const select = document.getElementById('neighborhoods-select');
+
+  const fragment = document.createDocumentFragment();
+
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
     option.value = neighborhood;
-    select.append(option);
+    fragment.append(option);
   });
+
+  document.getElementById('neighborhoods-select').append(fragment);
 }
 
 /**
@@ -58,14 +62,16 @@ fetchCuisines = () => {
  * Set cuisines HTML.
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
-  const select = document.getElementById('cuisines-select');
+  const fragment = document.createDocumentFragment();
 
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
     option.innerHTML = cuisine;
     option.value = cuisine;
-    select.append(option);
+    fragment.append(option);
   });
+
+  document.getElementById('cuisines-select').append(fragment);
 }
 
 /**
@@ -145,10 +151,13 @@ resetRestaurants = (restaurants) => {
  * Create all restaurants HTML and add them to the webpage.
  */
 fillRestaurantsHTML = (restaurants = self.restaurants) => {
-  const ul = document.getElementById('restaurants-list');
+  const fragment = document.createDocumentFragment();
+
   restaurants.forEach(restaurant => {
-    ul.append(createRestaurantHTML(restaurant));
+    fragment.append(createRestaurantHTML(restaurant));
   });
+
+  document.getElementById('restaurants-list').append(fragment);
   addMarkersToMap();
 }
 

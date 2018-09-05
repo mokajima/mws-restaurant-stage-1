@@ -106,7 +106,8 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
-  const hours = document.getElementById('restaurant-hours');
+  const fragment = document.createDocumentFragment();
+
   for (let key in operatingHours) {
     const row = document.createElement('tr');
 
@@ -118,31 +119,40 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     time.innerHTML = operatingHours[key];
     row.appendChild(time);
 
-    hours.appendChild(row);
+    fragment.appendChild(row);
   }
+
+  document.getElementById('restaurant-hours').appendChild(fragment);
 }
 
 /**
  * Create all reviews HTML and add them to the webpage.
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
-  const container = document.getElementById('reviews-container');
+  const fragment = document.createDocumentFragment();
+
   const title = document.createElement('h2');
   title.className = 'hidden';
   title.innerHTML = 'Reviews';
-  container.appendChild(title);
+  fragment.appendChild(title);
 
   if (!reviews) {
     const noReviews = document.createElement('p');
     noReviews.innerHTML = 'No reviews yet!';
-    container.appendChild(noReviews);
+    fragment.appendChild(noReviews);
     return;
   }
-  const ul = document.getElementById('reviews-list');
+
+  const ul = document.createElement('ul');
+  ul.id = 'reviews-list';
+
   reviews.forEach(review => {
     ul.appendChild(createReviewHTML(review));
   });
-  container.appendChild(ul);
+
+  fragment.appendChild(ul);
+
+  document.getElementById('reviews-container').appendChild(fragment);
 }
 
 /**
