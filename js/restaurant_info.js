@@ -81,10 +81,10 @@ fetchRestaurantFromURL = (callback) => {
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
-  name.innerHTML = restaurant.name;
+  name.textContent = restaurant.name;
 
   const address = document.getElementById('restaurant-address');
-  address.innerHTML = restaurant.address;
+  address.textContent = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
@@ -92,7 +92,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   image.alt = restaurant.name;
 
   const cuisine = document.getElementById('restaurant-cuisine');
-  cuisine.innerHTML = restaurant.cuisine_type;
+  cuisine.textContent = restaurant.cuisine_type;
 
   // fill operating hours
   if (restaurant.operating_hours) {
@@ -112,11 +112,11 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
     const row = document.createElement('tr');
 
     const day = document.createElement('td');
-    day.innerHTML = key;
+    day.textContent = key;
     row.appendChild(day);
 
     const time = document.createElement('td');
-    time.innerHTML = operatingHours[key];
+    time.textContent = operatingHours[key];
     row.appendChild(time);
 
     fragment.appendChild(row);
@@ -133,12 +133,12 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 
   const title = document.createElement('h2');
   title.className = 'hidden';
-  title.innerHTML = 'Reviews';
+  title.textContent = 'Reviews';
   fragment.appendChild(title);
 
   if (!reviews) {
     const noReviews = document.createElement('p');
-    noReviews.innerHTML = 'No reviews yet!';
+    noReviews.textContent = 'No reviews yet!';
     fragment.appendChild(noReviews);
     return;
   }
@@ -161,19 +161,19 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
-  name.innerHTML = review.name;
+  name.textContent = review.name;
   li.appendChild(name);
 
   const date = document.createElement('p');
-  date.innerHTML = review.date;
+  date.textContent = review.date;
   li.appendChild(date);
 
   const rating = document.createElement('p');
-  rating.innerHTML = `Rating: ${review.rating}`;
+  rating.textContent = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
   const comments = document.createElement('p');
-  comments.innerHTML = review.comments;
+  comments.textContent = review.comments;
   li.appendChild(comments);
 
   return li;
@@ -185,7 +185,7 @@ createReviewHTML = (review) => {
 fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
-  li.innerHTML = restaurant.name;
+  li.textContent = restaurant.name;
   breadcrumb.appendChild(li);
 }
 

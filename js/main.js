@@ -36,7 +36,7 @@ fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
 
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
-    option.innerHTML = neighborhood;
+    option.textContent = neighborhood;
     option.value = neighborhood;
     fragment.append(option);
   });
@@ -66,7 +66,7 @@ fillCuisinesHTML = (cuisines = self.cuisines) => {
 
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
-    option.innerHTML = cuisine;
+    option.textContent = cuisine;
     option.value = cuisine;
     fragment.append(option);
   });
@@ -174,19 +174,19 @@ createRestaurantHTML = (restaurant) => {
   li.append(image);
 
   const name = document.createElement('h3');
-  name.innerHTML = restaurant.name;
+  name.textContent= restaurant.name;
   li.append(name);
 
   const neighborhood = document.createElement('p');
-  neighborhood.innerHTML = restaurant.neighborhood;
+  neighborhood.textContent = restaurant.neighborhood;
   li.append(neighborhood);
 
   const address = document.createElement('p');
-  address.innerHTML = restaurant.address;
+  address.textContent = restaurant.address;
   li.append(address);
 
   const more = document.createElement('a');
-  more.innerHTML = 'View Details';
+  more.textContent = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
   more.setAttribute('aria-label', `View Detais of ${restaurant.name}`);
   li.append(more)
