@@ -2,6 +2,8 @@
 
 Restaurant Reviews App is a website which is responsive, accessible, and available offline.
 
+![Screenshot](https://mokajima.github.io/portfolio/images/restaurant-reviews-app.jpg)
+
 ## Dependencies
 
 - [Leaflet](https://leafletjs.com/) v1.3.1
